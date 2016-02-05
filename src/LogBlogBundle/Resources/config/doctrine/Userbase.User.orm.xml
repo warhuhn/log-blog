@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                   https://raw.github.com/doctrine/doctrine2/2.5/doctrine-mapping.xsd">
+
+    <entity name="LogBlogBundle\Entity\Userbase\User" table="user">
+        <indexes>
+            <index columns="username"/>
+            <index columns="email"/>
+        </indexes>
+        <id name="id" column="uuid" type="uuid">
+            <!-- we're using run-time generated uuids, so no generation strategy needed -->
+            <generator strategy="NONE"/>
+        </id>
+
+        <one-to-many target-entity="LogBlogBundle\Entity\Content\Post" field="authoredPosts" mapped-by="author"/>
+    </entity>
+
+</doctrine-mapping>
