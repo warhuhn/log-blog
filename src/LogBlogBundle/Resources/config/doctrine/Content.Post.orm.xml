@@ -8,7 +8,7 @@
         <indexes>
             <index columns="title"/>
         </indexes>
-        <id name="id" column="uuid" type="uuid">
+        <id name="id" column="id" type="uuid">
             <!-- we're using run-time generated uuids, so no generation strategy needed -->
             <generator strategy="NONE"/>
         </id>
