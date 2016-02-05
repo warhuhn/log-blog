@@ -1,0 +1,16 @@
+{# /Homepage/homepage.html.twig #}
+{% extends '@LogBlog/layout.html.twig' %}
+{% block page_content %}
+    <h2>Startseite!</h2>
+
+    {% for p in posts %}
+        <article>
+            <header>{{ p.title }}</header>
+            <div>
+                {{ p.content }}
+            </div>
+        </article>
+    {% else %}
+        <div>Nothing here. :(</div>
+    {% endfor %}
+{% endblock %}
