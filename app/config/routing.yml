@@ -1,0 +1,7 @@
+log_blog:
+    resource: "@LogBlogBundle/Resources/config/routing.xml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
