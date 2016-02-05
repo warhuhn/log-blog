@@ -5,6 +5,6 @@
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
     <route id="log_blog_homepage" path="/">
-        <default key="_controller">LogBlogBundle:Default:index</default>
+        <default key="_controller">LogBlogBundle:Homepage:homepage</default>
     </route>
 </routes>
