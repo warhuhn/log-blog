@@ -11,6 +11,12 @@ web_profiler:
     toolbar: true
     intercept_redirects: false
 
+# Use sqlite Db For Development
+doctrine:
+    dbal:
+        driver:   pdo_sqlite
+        path:     %kernel.root_dir%/../var/%kernel.environment%.db
+
 monolog:
     handlers:
         main:
