@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fc12a2c9685c386e4737f83691cc3e2a",
-    "content-hash": "b9f5abf3639d7b6cea81d9ed85a9d457",
+    "hash": "b23f6fa65ab32794e03b725fa12e6868",
+    "content-hash": "6500a70e682e15e0c921bb9f54034ea8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1174,6 +1174,62 @@
                 "uuid"
             ],
             "time": "2015-12-17 15:21:44"
+        },
+        {
+            "name": "ramsey/uuid-doctrine",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ramsey/uuid-doctrine.git",
+                "reference": "86c828a385dbed30982e7ad31b2701297aad634c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ramsey/uuid-doctrine/zipball/86c828a385dbed30982e7ad31b2701297aad634c",
+                "reference": "86c828a385dbed30982e7ad31b2701297aad634c",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.5",
+                "php": ">=5.4",
+                "ramsey/uuid": "^3.0"
+            },
+            "require-dev": {
+                "jakub-onderka/php-parallel-lint": "^0.9.0",
+                "phpunit/phpunit": "^4.7|^5.0",
+                "satooshi/php-coveralls": "^0.6.1",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ramsey\\Uuid\\Doctrine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marijn Huizendveld",
+                    "email": "marijn.huizendveld@gmail.com"
+                },
+                {
+                    "name": "Ben Ramsey",
+                    "email": "ben@benramsey.com",
+                    "homepage": "http://benramsey.com"
+                }
+            ],
+            "description": "Allow the use of a ramsey/uuid UUID as Doctrine field type.",
+            "homepage": "https://github.com/ramsey/uuid-doctrine",
+            "keywords": [
+                "doctrine",
+                "guid",
+                "identifier",
+                "uuid"
+            ],
+            "time": "2016-02-01 16:29:12"
         },
         {
             "name": "sensio/distribution-bundle",
