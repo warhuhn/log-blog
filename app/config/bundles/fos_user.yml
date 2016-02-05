@@ -1,0 +1,4 @@
+fos_user:
+    db_driver: orm # Use Doctrine ORM
+    user_class: %log_blog.user.class%
+    firewall_name: admin_area
