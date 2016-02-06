@@ -15,7 +15,7 @@ class HomepageController extends Controller
 {
     public function homepageAction(Request $request)
     {
-        $page = $request->query->get('page', 1);
+        $page = (int) $request->query->get('page', 1);
 
         $postPager = $this
             ->get('log_blog.manager.post')
