@@ -68,7 +68,7 @@ class PostWriteController extends Controller
         }
 
         return $this->render('@LogBlog/Authoring/Post/write.html.twig', [
-            'post_form' => $form,
+            'post_form' => $form->createView(),
             'post' => $post,
         ]);
     }
