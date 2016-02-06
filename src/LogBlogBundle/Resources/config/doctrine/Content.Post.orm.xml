@@ -4,7 +4,9 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                    https://raw.github.com/doctrine/doctrine2/2.5/doctrine-mapping.xsd">
 
-    <entity name="LogBlogBundle\Entity\Content\Post" table="post">
+    <entity name="LogBlogBundle\Entity\Content\Post"
+            table="post"
+            repository-class="LogBlogBundle\ORM\Repository\PostRepository">
         <indexes>
             <index columns="title"/>
         </indexes>
