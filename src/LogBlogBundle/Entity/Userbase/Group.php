@@ -23,6 +23,6 @@ class Group extends \FOS\UserBundle\Model\Group
      */
     public function __toString()
     {
-        return $this->getName();
+        return (string) $this->getName();
     }
 }
