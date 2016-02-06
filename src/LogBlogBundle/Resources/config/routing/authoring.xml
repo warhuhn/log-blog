@@ -13,7 +13,7 @@
     <route id="log_blog_authoring_post_write" path="/authoring/posts/write">
         <default key="_controller">LogBlogBundle:Authoring/PostWrite:new</default>
     </route>
-    <route id="log_blog_authoring_post_write" path="/authoring/posts/write/:postId">
+    <route id="log_blog_authoring_post_edit" path="/authoring/posts/write/:postId">
         <default key="_controller">LogBlogBundle:Authoring/PostWrite:edit</default>
     </route>
 </routes>
