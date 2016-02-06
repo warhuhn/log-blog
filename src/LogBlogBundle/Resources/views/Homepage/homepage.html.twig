@@ -6,7 +6,7 @@
 
     {% for p in post_pager %}
         {% if loop.first %}
-            {{ knp_paginator_render(post_pager) }}
+            {{ knp_pagination_render(post_pager) }}
         {% endif %}
         <article>
             <header>{{ p.title }}</header>
@@ -16,7 +16,7 @@
             <footer>Veröffentlicht am: {{ p.publishedAt | date }} von {{ p.author }}</footer>
         </article>
         {% if loop.last %}
-            {{ knp_paginator_render(post_pager) }}
+            {{ knp_pagination_render(post_pager) }}
         {% endif %}
     {% else %}
         <div>Nothing here. :(</div>
