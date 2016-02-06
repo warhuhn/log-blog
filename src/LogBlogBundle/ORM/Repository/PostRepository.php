@@ -8,21 +8,12 @@
 
 namespace LogBlogBundle\ORM\Repository;
 
-class PostRepository extends AbstractPagingRepository
+class PostRepository extends AbstractDefaultRepository
 {
-    public function findAllOnPage($page, $limit)
+    public function createPublishedQueryBuilder()
     {
-        return $this->createPagedQueryBuilder($page, $limit)
-            ->getQuery()
-            ->execute();
-    }
-
-    public function findAllPublishedOnPage($page, $limit)
-    {
-        return $this->createPagedQueryBuilder($page, $limit)
+        return $this->createDefaultQueryBuilder()
             ->where($this->getDefaultAlias().'.published = :isPublished')
-            ->setParameter('isPublished', true)
-            ->getQuery()
-            ->execute();
+            ->setParameter('isPublished', true);
     }
 }
