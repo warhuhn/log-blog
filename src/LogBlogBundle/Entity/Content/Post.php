@@ -198,4 +198,12 @@ class Post
         $this->published = false;
         $this->publishedAt = null;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }

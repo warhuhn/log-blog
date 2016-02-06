@@ -17,4 +17,12 @@ class Group extends \FOS\UserBundle\Model\Group
         parent::__construct($name, $roles);
         $this->id = Uuid::uuid4();
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
