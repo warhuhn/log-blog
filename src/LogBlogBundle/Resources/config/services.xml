@@ -1,21 +1,22 @@
 <?xml version="1.0" ?>
-
 <container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
+    <!-- Define class names as parameters. -->
     <parameters>
         <parameter key="log_blog.user.class" type="string">\LogBlogBundle\Entity\Userbase\User</parameter>
         <parameter key="log_blog.group.class" type="string">\LogBlogBundle\Entity\Userbase\Group</parameter>
+        <parameter key="log_blog.post.class" type="string">\LogBlogBundle\Entity\Content\Post</parameter>
     </parameters>
 
-    <!--
+    <!-- Services -->
     <services>
-        <service id="log_blog.example" class="LogBlogBundle\Example">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <!-- Doctrine ORM Repositories -->
+        <service id="log_blog.orm.repository.post"
+                 class="LogBlogBundle\ORM\Repository\PostRepository">
+            <factory service="doctrine.orm.default_entity_manager" method="getRepository"/>
+            <argument>%log_blog.post.class%</argument>
         </service>
     </services>
-    -->
 </container>
