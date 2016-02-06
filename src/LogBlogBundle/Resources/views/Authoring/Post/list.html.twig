@@ -6,7 +6,7 @@
     <h2>Posts</h2>
     {% for p in post_pager %}
         {% if loop.first %}
-            {{ knp_paginator_render(post_pager) }}
+            {{ knp_pagination_render(post_pager) }}
         {% endif %}
         <article>
             <header>
@@ -19,7 +19,7 @@
             </div>
         </article>
         {% if loop.last %}
-            {{ knp_paginator_render(post_pager) }}
+            {{ knp_pagination_render(post_pager) }}
         {% endif %}
     {% else %}
         <div>Nothing here. :(</div>
