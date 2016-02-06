@@ -21,6 +21,8 @@ class PostViewController extends Controller
      */
     public function viewAction($postId)
     {
+        $this->denyAccessUnlessGranted('ROLE_AUTHOR');
+
         $post = $this->get('log_blog.manager.post')->getPostByUuid($postId);
 
         return $this->render('@LogBlog/Authoring/Post/view.html.twig', [

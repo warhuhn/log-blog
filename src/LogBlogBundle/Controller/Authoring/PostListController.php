@@ -21,6 +21,8 @@ class PostListController extends Controller
      */
     public function listAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_AUTHOR');
+
         $page = (int) $request->query->get('page', 1);
 
         $postsPager = $this->get('log_blog.manager.post')

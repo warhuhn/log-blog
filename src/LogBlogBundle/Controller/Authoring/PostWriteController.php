@@ -23,6 +23,8 @@ class PostWriteController extends Controller
      */
     public function newAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_AUTHOR');
+
         $post = new Post();
         $post->setAuthor($this->getUser());
 
@@ -39,6 +41,8 @@ class PostWriteController extends Controller
      */
     public function editAction(Request $request, $postId)
     {
+        $this->denyAccessUnlessGranted('ROLE_AUTHOR');
+
         $post = $this->get('log_blog.manager.post')->getPostByUuid($postId);
 
         return $this->handlePost($request, $post);
