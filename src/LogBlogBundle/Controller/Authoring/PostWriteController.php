@@ -54,7 +54,7 @@ class PostWriteController extends Controller
         $form = $this->createForm(PostWriteType::class, $post);
 
         if ($request->isMethod(Request::METHOD_POST)) {
-            $form->submit($request);
+            $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $post = $form->getData();
