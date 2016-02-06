@@ -95,6 +95,10 @@ class MenuBuilder
                 'route' => 'fos_user_security_logout',
             ]);
         } else {
+            $menu->addChild('register', [
+                'label' => 'Neu Registrieren',
+                'route' => 'fos_user_registration_register',
+            ]);
             $menu->addChild('login', [
                 'label' => 'Anmelden',
                 'route' => 'fos_user_security_login',
