@@ -26,5 +26,19 @@
             <argument type="service" id="log_blog.orm.repository.post"/>
             <argument type="service" id="knp_paginator"/>
         </service>
+
+        <!-- MenuBuilder Service -->
+        <service id="log_blog.menu.builder"
+                 class="LogBlogBundle\Menu\MenuBuilder">
+            <argument type="service" id="knp_menu.factory"/>
+            <argument type="service" id="security.authorization_checker"/>
+            <argument type="service" id="security.token_storage"/>
+        </service>
+
+        <service id="log_blog.menu.main_menu"
+                 class="Knp\Menu\MenuItem">
+            <factory service="log_blog.menu.builder" method="createMainMenu"/>
+            <tag name="knp_menu.menu" alias="mainMenu"/>
+        </service>
     </services>
 </container>
