@@ -13,6 +13,7 @@
             <div>
                 {{ p.content | nl2br }}
             </div>
+            <footer>Veröffentlicht am: {{ p.publishedAt | date }} von {{ p.author }}</footer>
         </article>
         {% if loop.last %}
             {{ knp_paginator_render(post_pager) }}
