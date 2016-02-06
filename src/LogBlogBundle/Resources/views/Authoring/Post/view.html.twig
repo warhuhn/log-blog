@@ -1,0 +1,27 @@
+{# /Homepage/homepage.html.twig #}
+{# Post List for logged in authors #}
+{% extends '@LogBlog/layout.html.twig' %}
+
+{% block page_content %}
+    <h2>Anzeigen: {{ post.title }}</h2>
+    <dl class="property-list">
+        <dt>Autor</dt>
+        <dd>{{ post.autor }}</dd>
+        <dt>Veröffentlicht</dt>
+        <dd>
+            {% if post.published %}
+                Ja, am {{ post.publishedAt | date }}
+            {% else %}
+                Nein
+            {% endif %}
+        </dd>
+        <dt>Zuletzt bearbeitet</dt>
+        <dd>{{ post.updatedAt | date }}</dd>
+        <dt>Erstellt am</dt>
+        <dd>{{ post.createdAt | date }}</dd>
+    </dl>
+    <div>
+        <strong>Inhalt:</strong><br>
+        {{ post.content | nl2br }}
+    </div>
+{% endblock %}

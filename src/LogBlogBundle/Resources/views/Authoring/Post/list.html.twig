@@ -1,0 +1,27 @@
+{# /Homepage/homepage.html.twig #}
+{# Post List for logged in authors #}
+{% extends '@LogBlog/layout.html.twig' %}
+
+{% block page_content %}
+    <h2>Posts</h2>
+    {% for p in post_pager %}
+        {% if loop.first %}
+            {{ knp_paginator_render(post_pager) }}
+        {% endif %}
+        <article>
+            <header>
+                <a href="#">
+                    {{ p.title }}
+                </a>
+            </header>
+            <div>
+                {{ p.content | nl2br }}
+            </div>
+        </article>
+        {% if loop.last %}
+            {{ knp_paginator_render(post_pager) }}
+        {% endif %}
+    {% else %}
+        <div>Nothing here. :(</div>
+    {% endfor %}
+{% endblock %}
