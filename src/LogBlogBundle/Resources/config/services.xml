@@ -22,9 +22,9 @@
         <!-- Manager Services -->
         <service id="log_blog.manager.post"
                  class="LogBlogBundle\Manager\PostManager">
-            <argument>@doctrine.orm.manager</argument>
-            <argument>@log_blog.orm.repository.post</argument>
-            <argument>@knp_paginator</argument>
+            <argument type="service" id="doctrine.orm.default_entity_manager"/>
+            <argument type="service" id="log_blog.orm.repository.post"/>
+            <argument type="service" id="knp_paginator"/>
         </service>
     </services>
 </container>
