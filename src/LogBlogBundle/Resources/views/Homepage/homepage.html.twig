@@ -11,7 +11,7 @@
         <article>
             <header>{{ p.title }}</header>
             <div>
-                {{ p.content }}
+                {{ p.content | nl2br }}
             </div>
         </article>
         {% if loop.last %}
