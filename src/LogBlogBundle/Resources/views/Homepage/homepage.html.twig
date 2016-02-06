@@ -1,15 +1,22 @@
 {# /Homepage/homepage.html.twig #}
+{# Homepage #}
 {% extends '@LogBlog/layout.html.twig' %}
 {% block page_content %}
     <h2>Startseite!</h2>
 
-    {% for p in posts %}
+    {% for p in post_pager %}
+        {% if loop.first %}
+            {{ knp_paginator_render(post_pager) }}
+        {% endif %}
         <article>
             <header>{{ p.title }}</header>
             <div>
                 {{ p.content }}
             </div>
         </article>
+        {% if loop.last %}
+            {{ knp_paginator_render(post_pager) }}
+        {% endif %}
     {% else %}
         <div>Nothing here. :(</div>
     {% endfor %}

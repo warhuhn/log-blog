@@ -8,18 +8,21 @@
 
 namespace LogBlogBundle\Controller;
 
-use LogBlogBundle\Entity\Content\Post;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class HomepageController extends Controller
 {
-    public function homepageAction()
+    public function homepageAction(Request $request)
     {
-        // TODO: Move this to Manager
-        $posts = $this->getDoctrine()->getRepository('LogBlogBundle:Content\Post')->findAll();
+        $page = $request->query->get('page', 1);
+
+        $postPager = $this
+            ->get('log_blog.manager.post')
+            ->getPagerForPublished($page);
 
         return $this->render('@LogBlog/Homepage/homepage.html.twig', [
-            'posts' => $posts,
+            'post_pager' => $postPager,
         ]);
     }
 }
