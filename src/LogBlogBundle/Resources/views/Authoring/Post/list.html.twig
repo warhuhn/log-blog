@@ -10,7 +10,7 @@
         {% endif %}
         <article>
             <header>
-                <a href="#">
+                <a href="{{ path('log_blog_authoring_post_view', { 'postId': p.id }) }}">
                     {{ p.title }}
                 </a>
             </header>
