@@ -1,6 +1,6 @@
 # LogBlog
 
-![LogBlog Logo](src/LogBlogBundle/Resource/images/log_blog_logo.png?raw=true)
+![LogBlog Logo](src/LogBlogBundle/Resources/images/log_blog_logo.png?raw=true)
 
 This is a sample application i wrote.
 
