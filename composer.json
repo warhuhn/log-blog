@@ -1,8 +1,8 @@
 {
     "name": "warhuhn/log-blog",
-    "license": "proprietary",
+    "license": "MIT",
     "type": "project",
-    "description": "warhuhn's Log Blog. As in wooden Log.",
+    "description": "A sample Blog application.",
     "autoload": {
         "psr-4": { "": "src/" },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
