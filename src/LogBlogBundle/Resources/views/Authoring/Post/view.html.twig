@@ -4,6 +4,14 @@
 
 {% block page_content %}
     <h2>Anzeigen: {{ post.title }}</h2>
+    <p>
+        {% if not post.published %}
+        <a href="{{ path('log_blog_authoring_post_publish', { 'postId': post.id }) }}">Veröffentlichen</a>
+        <a href="{{ path('log_blog_authoring_post_edit', { 'postId': post.id }) }}">Bearbeiten</a>
+        {% else %}
+        <a href="{{ path('log_blog_authoring_post_unpublish', { 'postId': post.id }) }}">Zurückziehen</a>
+        {% endif %}
+    </p>
     <dl class="property-list">
         <dt>Autor</dt>
         <dd>{{ post.author }}</dd>
