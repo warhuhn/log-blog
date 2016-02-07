@@ -11,6 +11,7 @@ namespace LogBlogBundle\Entity\Content;
 
 use LogBlogBundle\Entity\Userbase\User;
 use LogBlogBundle\Exception\InvalidArgumentException;
+use LogBlogBundle\Exception\PublishingException;
 use Ramsey\Uuid\Uuid;
 
 class Post
@@ -186,6 +187,9 @@ class Post
      */
     public function publish()
     {
+        if ($this->isPublished()) {
+            throw new PublishingException('You cannot publish an already published Post');
+        }
         $this->published = true;
         $this->publishedAt = new \DateTimeImmutable();
     }
@@ -195,6 +199,9 @@ class Post
      */
     public function unpublish()
     {
+        if (!$this->isPublished()) {
+            throw new PublishingException('You cannot unpublish a Post that is not published');
+        }
         $this->published = false;
         $this->publishedAt = null;
     }
