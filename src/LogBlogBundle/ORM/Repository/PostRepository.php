@@ -14,6 +14,7 @@ class PostRepository extends AbstractDefaultRepository
     {
         return $this->createDefaultQueryBuilder()
             ->where($this->getDefaultAlias().'.published = :isPublished')
-            ->setParameter('isPublished', true);
+            ->setParameter('isPublished', true)
+            ->orderBy($this->getDefaultAlias().'.publishedAt', 'DESC');
     }
 }
