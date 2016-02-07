@@ -8,6 +8,7 @@ class DefaultControllerTest extends WebTestCase
 {
     public function testIndex()
     {
+        static::markTestSkipped('Symfony Default Controller');
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/');
