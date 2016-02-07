@@ -16,4 +16,11 @@
     <route id="log_blog_authoring_post_edit" path="/authoring/posts/write/{postId}">
         <default key="_controller">LogBlogBundle:Authoring/PostWrite:edit</default>
     </route>
+
+    <route id="log_blog_authoring_post_publish" path="/authoring/posts/publish/{postId}">
+        <default key="_controller">LogBlogBundle:Authoring/PostPublish:publish</default>
+    </route>
+    <route id="log_blog_authoring_post_unpublish" path="/authoring/posts/unpublish/{postId}">
+        <default key="_controller">LogBlogBundle:Authoring/PostPublish:unpublish</default>
+    </route>
 </routes>
