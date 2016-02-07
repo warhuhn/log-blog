@@ -11,6 +11,7 @@ namespace LogBlogBundle\Manager;
 use Doctrine\ORM\EntityManager;
 use Knp\Component\Pager\Paginator;
 use LogBlogBundle\Entity\Content\Post;
+use LogBlogBundle\Exception\InvalidArgumentException;
 use LogBlogBundle\Exception\NotFoundException;
 use LogBlogBundle\ORM\Repository\PostRepository;
 
@@ -57,8 +58,11 @@ class PostManager
      * @return Post
      * @throws NotFoundException
      */
-    public function getPostByUuid(string $uuid)
+    public function getPostByUuid($uuid)
     {
+        if (!is_string($uuid) && strlen($uuid) !== 36) {
+            throw new InvalidArgumentException('The post id must be a string with a length of 36 characters');
+        }
         $post = $this->getPostRepository()->find($uuid);
 
         if (null === $post) {
@@ -86,8 +90,11 @@ class PostManager
      * @param int $page
      * @return Post[]
      */
-    public function getPager(int $page)
+    public function getPager($page)
     {
+        if (!is_int($page) || $page <= 0) {
+            throw new InvalidArgumentException('Page must be an integer greater than 0');
+        }
         return $this->getPaginator()->paginate(
             $this->getPostRepository()->createDefaultQueryBuilder(),
             $page
@@ -98,8 +105,11 @@ class PostManager
      * @param int $page
      * @return Post[]
      */
-    public function getPagerForPublished(int $page)
+    public function getPagerForPublished($page)
     {
+        if (!is_int($page) || $page <= 0) {
+            throw new InvalidArgumentException('Page must be an integer greater than 0');
+        }
         return $this->getPaginator()->paginate(
             $this->getPostRepository()->createPublishedQueryBuilder(),
             $page
