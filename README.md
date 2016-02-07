@@ -12,7 +12,7 @@ It's using the Symfony 3 Framework and Doctrine ORM.
 
 - [x] User Login and Registration
 - [x] Can write and publish Posts
-- [x] Can browser Posts
+- [x] Can browse Posts
 
 ### Maybe someday Features
 
