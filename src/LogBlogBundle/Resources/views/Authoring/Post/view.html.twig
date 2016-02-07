@@ -19,9 +19,9 @@
         <dd>{{ post.updatedAt | date }}</dd>
         <dt>Erstellt am</dt>
         <dd>{{ post.createdAt | date }}</dd>
+        <dt>Inhalt</dt>
+        <dd>
+            {{ post.content | nl2br }}
+        </dd>
     </dl>
-    <div>
-        <strong>Inhalt:</strong><br>
-        {{ post.content | nl2br }}
-    </div>
 {% endblock %}
