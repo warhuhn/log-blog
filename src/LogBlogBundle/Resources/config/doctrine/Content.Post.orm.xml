@@ -17,7 +17,7 @@
         <field name="title" column="title" type="string"/>
         <field name="content" column="content" type="text"/>
         <field name="published" column="is_published" type="boolean"/>
-        <field name="publishedAt" column="published_at" type="datetime"/>
+        <field name="publishedAt" column="published_at" type="datetime" nullable="true"/>
         <field name="createdAt" column="created_at" type="datetime"/>
         <field name="updatedAt" column="updated_at" type="datetime"/>
 
